@@ -1,6 +1,7 @@
 package com.Dobe.Ferme.models;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
@@ -12,7 +13,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = " TACHE ")

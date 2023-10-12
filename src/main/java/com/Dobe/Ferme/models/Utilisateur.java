@@ -2,6 +2,7 @@ package com.Dobe.Ferme.models;
 
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.repository.cdi.Eager;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = " UTILISATEUR ")
