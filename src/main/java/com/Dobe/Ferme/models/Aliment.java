@@ -28,4 +28,5 @@ public class Aliment extends AbstractEntity{
     @JoinColumn(name = "Id_Regime")
     private Regime regime;
 
+
 }
