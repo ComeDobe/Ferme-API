@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " PARCELLE ")
 
-public class Parcelle {
+public class Parcelle extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +22,11 @@ public class Parcelle {
     private Integer Id_Parcelle;
     private String Nom;
     private String Dimension;
-    private String Type_Sol;
-    @ManyToOne
-    @JoinColumn(name = "Id_Ferme")
-    private  Ferme ferme;
+    @Column(name = "Type_Sol")
+    private String TypeSol;
+//    @ManyToOne
+//    @JoinColumn(name = "Id_Ferme")
+//    private  Ferme ferme;
     @ManyToOne
     @JoinColumn(name = "Id_Tache")
     private Tache tache;

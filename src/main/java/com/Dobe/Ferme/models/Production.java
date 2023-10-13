@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = " PRODUCTION ")
-public class Production {
+public class Production extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,8 @@ public class Production {
     private String Type;
     private String Qualite;
     private Integer Quantite;
-    private LocalDate Date_Production;
+    @Column(name = "Date_Production")
+    private LocalDate DateProduction;
     @ManyToOne
     @JoinColumn(name = "Id_Animal")
     private Animal animal;

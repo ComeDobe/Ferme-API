@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = " MAINTENANCE ")
 
-public class Maintenance {
+public class Maintenance extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

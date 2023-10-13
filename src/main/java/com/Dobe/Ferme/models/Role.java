@@ -15,11 +15,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " ROLE ")
 
-public class Role {
+public class Role extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Role;
-    private String Nom_Role;
-    private String Description_Role;
+
+    @Column(name = "Nom_Role")
+    private String NomRole;
+    @Column(name = "Description_Role")
+    private String DescriptionRole;
 
 }

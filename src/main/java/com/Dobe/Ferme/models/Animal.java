@@ -14,13 +14,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " ANIMAL ")
 
-public class Animal {
+public class Animal extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Animal;
 
-    private String Nome;
+    private String Nom;
     private String Sexe;
     private String Sante;
     private Integer Poids;

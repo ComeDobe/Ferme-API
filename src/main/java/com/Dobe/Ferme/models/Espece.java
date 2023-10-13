@@ -15,14 +15,17 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = " ESPECE ")
 
-public class Espece {
+public class Espece extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Espece;
 
-    private String Nom_Commun;
-    private String Nom_Scientifique;
-    private LocalDate Duree_Vie;
+    @Column(name = "Nom_Commun")
+    private String NomCommun;
+    @Column(name = "Nom_Scientifique")
+    private String NomScientifique;
+    @Column(name = "Duree_Vie")
+    private LocalDate DureeVie;
     private Integer Poids;
     @ManyToOne
     @JoinColumn(name = "Id_Animal")

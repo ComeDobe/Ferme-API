@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " ALIMENT ")
 
-public class Aliment {
+public class Aliment extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,4 +27,5 @@ public class Aliment {
     @ManyToOne
     @JoinColumn(name = "Id_Regime")
     private Regime regime;
+
 }

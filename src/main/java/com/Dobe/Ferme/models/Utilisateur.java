@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Table(name = " UTILISATEUR ")
 
-public class Utilisateur {
+public class Utilisateur extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,7 @@ public class Utilisateur {
     private String Nom;
     private String Prenom;
     private String Password;
+    private boolean active;
     private String Email;
     private String Adresse;
     private String Telephone;

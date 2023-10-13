@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " PLANTe ")
 
-public class Plante {
+public class Plante extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

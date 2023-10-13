@@ -17,13 +17,15 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = " TACHE ")
-public class Tache {
+public class Tache extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Tache;
 
     private String Description;
-    private LocalDate Date_Debut;
-    private LocalDate Date_Fin;
+    @Column(name = "Date_Debut")
+    private LocalDate DateDebut;
+    @Column(name = "Date_Fin")
+    private LocalDate DateFin;
 }

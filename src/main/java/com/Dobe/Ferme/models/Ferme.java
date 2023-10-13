@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " FERME ")
 
-public class Ferme {
+public class Ferme extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +32,10 @@ public class Ferme {
     @JoinColumn(name = "Id_Animal")
     private Animal animal;
 
+
+    @ManyToOne
+    @JoinColumn(name = "Id_Parcelle")
+    private Parcelle parcelle;
 
 
 }

@@ -14,11 +14,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = " PLANTATION ")
 
-public class Plantation {
+public class Plantation extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Plantation;
-    private Integer Quantite_Plantee;
+    @Column(name = "Quantite_Plantee")
+    private Integer QuantitePlantee;
     @ManyToOne
     @JoinColumn(name = "Id_Parcelle")
     private Parcelle parcelle;

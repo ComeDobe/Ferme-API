@@ -15,18 +15,20 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = " EMPLOYE ")
 
-public class Employe {
+public class Employe extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Employe;
 
     private String Nom;
     private String Prenom;
-    private LocalDate Date_Naissance;
-    private String AdresService;
+    @Column(name = "Date_Naissance")
+    private LocalDate DateNaissance;
+    private String Adresse;
     private String Telephone;
     private String Rang;
-    private LocalDate Date_Embaucher;
+    @Column(name = "Date_Embaucher")
+    private LocalDate DateEmbaucher;
     @ManyToOne
     @JoinColumn(name = "Id_Tache")
     private Tache tache;

@@ -15,13 +15,15 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = " REGIME ")
 
-public class Regime {
+public class Regime extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id_Regime;
-    private Integer Quantite_JournalieredValue;
-    private LocalDate Duree_Regime;
+    @Column(name = "Quantite_Journaliere")
+    private Integer Quantite;
+    @Column(name = "Duree_Regime")
+    private LocalDate DureeRegime;
     @ManyToOne
     @JoinColumn(name = "Id_Animal")
     private Animal animal;
