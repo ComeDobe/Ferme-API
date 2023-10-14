@@ -20,7 +20,8 @@ public class Maintenance extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer Id_Maintenance;
+    @Column(name = "Id_Maintenance")
+    private Integer Id;
     @Column(name = "Description_Maintenance")
     private String Description;
     @Column(name = "Date_Maintenance")

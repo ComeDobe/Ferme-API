@@ -18,8 +18,9 @@ public class Ferme extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Ferme;
 
+    @Column(name = "Id_Ferme")
+    private Integer Id;
     private String Nom;
     private String Adresse;
     private String Surface;

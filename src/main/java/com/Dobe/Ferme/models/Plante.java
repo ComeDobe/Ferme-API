@@ -19,8 +19,8 @@ public class Plante extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer Id_Plante;
-
+    @Column(name = "Id_Plante")
+    private Integer  Id;
     @Column(name = "Nom_Scientifique")
     private String Nom;
     @Column(name = "Nom_Commun")

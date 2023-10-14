@@ -18,7 +18,9 @@ public class Production extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Production;
+
+    @Column(name = "Id_Production")
+    private Integer Id;
 
     private String Type;
     private String Qualite;

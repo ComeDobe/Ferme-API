@@ -19,7 +19,9 @@ public class Materiel extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Materiel;
+
+    @Column(name = "Id_Materiel")
+    private Integer Id;
     private String Nom;
     private String Type;
     private String Marque;

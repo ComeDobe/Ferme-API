@@ -18,7 +18,9 @@ import javax.persistence.*;
 public class Role extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Role;
+
+    @Column(name = "Id_Role")
+    private Integer Id;
 
     @Column(name = "Nom_Role")
     private String NomRole;

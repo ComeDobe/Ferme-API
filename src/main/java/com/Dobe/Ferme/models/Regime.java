@@ -19,7 +19,9 @@ public class Regime extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Regime;
+
+    @Column(name = "Id_Regime")
+    private Integer Id;
     @Column(name = "Quantite_Journaliere")
     private Integer Quantite;
     @Column(name = "Duree_Regime")

@@ -18,8 +18,9 @@ import java.time.LocalDate;
 public class Employe extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Employe;
 
+    @Column(name = "Id_Employe")
+    private Integer Id;
     private String Nom;
     private String Prenom;
     @Column(name = "Date_Naissance")

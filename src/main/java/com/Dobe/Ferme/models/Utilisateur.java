@@ -22,7 +22,8 @@ public class Utilisateur extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Integer Id_Utilisateur;
+    @Column(name = "Id_Utilisateur")
+    private Integer Id;
     private String Nom;
     private String Prenom;
     private String Password;

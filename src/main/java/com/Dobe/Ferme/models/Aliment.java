@@ -18,8 +18,9 @@ public class Aliment extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Aliment;
 
+    @Column(name = "Id_Aliment")
+    private Integer Id;
     private String Nom;
     private String Type;
     private String Composition;

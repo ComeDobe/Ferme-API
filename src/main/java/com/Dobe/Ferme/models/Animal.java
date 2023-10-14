@@ -18,8 +18,9 @@ public class Animal extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Animal;
 
+    @Column(name = "Id_Animal")
+    private Integer Id;
     private String Nom;
     private String Sexe;
     private String Sante;

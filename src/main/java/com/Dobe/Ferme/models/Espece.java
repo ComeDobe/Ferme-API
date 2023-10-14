@@ -18,8 +18,9 @@ import java.time.LocalDate;
 public class Espece extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Espece;
 
+    @Column(name = "Id_Espece")
+    private Integer Id;
     @Column(name = "Nom_Commun")
     private String NomCommun;
     @Column(name = "Nom_Scientifique")

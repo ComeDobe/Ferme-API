@@ -17,7 +17,9 @@ import javax.persistence.*;
 public class Plantation extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Plantation;
+
+    @Column(name = "Id_Plantation")
+    private Integer Id;
     @Column(name = "Quantite_Plantee")
     private Integer QuantitePlantee;
     @ManyToOne

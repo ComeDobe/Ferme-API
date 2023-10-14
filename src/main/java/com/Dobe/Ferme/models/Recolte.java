@@ -19,7 +19,9 @@ public class Recolte extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Recolte;
+
+    @Column(name = "Id_Recolte")
+    private Integer Id;
     @Column(name = "Date_Recolte")
     private LocalDate DateRecolte;
     @Column(name = "Quantite_Produite")

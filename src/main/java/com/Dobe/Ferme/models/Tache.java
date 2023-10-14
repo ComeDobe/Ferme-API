@@ -21,7 +21,9 @@ public class Tache extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id_Tache;
+
+    @Column(name = "Id_Tache")
+    private Integer Id;
 
     private String Description;
     @Column(name = "Date_Debut")
