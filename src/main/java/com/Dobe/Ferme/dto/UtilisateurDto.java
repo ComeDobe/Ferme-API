@@ -19,10 +19,10 @@ public class UtilisateurDto {
     private Integer Id;
 
     @NotBlank(message = "le nom ne doit pas être vide")
-    private String Nom;
+    private String FirstName;
 
     @NotBlank(message = "le prénom ne doit pas être vide")
-    private String Prenom;
+    private String LastName;
 
     @NotBlank(message = "le mot de passe ne doit pas être vide")
     @Size(min = 8, max = 16, message = "le mot de passe doit être entre 8 et 16 caractères")
@@ -43,8 +43,8 @@ public class UtilisateurDto {
     public static UtilisateurDto fromEntity(Utilisateur utilisateur) {
         return UtilisateurDto.builder()
                 .Id(utilisateur.getId())
-                .Nom(utilisateur.getNom())
-                .Prenom(utilisateur.getPrenom())
+                .FirstName(utilisateur.getFirstName())
+                .LastName(utilisateur.getLastName())
                 .Email(utilisateur.getEmail())
                 .Telephone(utilisateur.getTelephone())
                 .Adresse(utilisateur.getAdresse())
@@ -55,8 +55,8 @@ public class UtilisateurDto {
     public static Utilisateur toEntity(UtilisateurDto utilisateur) {
         return Utilisateur.builder()
                 .Id(utilisateur.getId())
-                .Nom(utilisateur.getNom())
-                .Prenom(utilisateur.getPrenom())
+                .FirstName(utilisateur.getFirstName())
+                .LastName(utilisateur.getLastName())
                 .Email(utilisateur.getEmail())
                 .Telephone(utilisateur.getTelephone())
                 .Adresse(utilisateur.getAdresse())

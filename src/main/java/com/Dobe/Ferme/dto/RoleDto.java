@@ -21,10 +21,10 @@ public class RoleDto {
     @NotNull(message = "Le roleName ne peut pas etre null")
     @NotEmpty(message = "Le roleName ne peut pas etre vide")
     @NotBlank(message = "Le roleName ne peut pas contenir d'éspace")
-    private String NomRole;
+    private String RoleName;
 
     @NotNull(message = "La description ne peut pas etre null")
     @NotEmpty(message = "La description ne peut pas etre vide")
     @NotBlank(message = "La description ne peut pas contenir d'éspace")
-    private String DescriptionRole;
+    private String RoleDescription;
 }

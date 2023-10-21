@@ -24,8 +24,10 @@ public class Utilisateur extends AbstractEntity{
 
     @Column(name = "Id_Utilisateur")
     private Integer Id;
-    private String Nom;
-    private String Prenom;
+    @Column(name = "Nom")
+    private String FirstName;
+    @Column(name = "Prenom")
+    private String LastName;
     private String Password;
     private boolean active;
     private String Email;
