@@ -33,14 +33,14 @@ public class Utilisateur extends AbstractEntity{
     private String Telephone;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-        @JoinTable(name = "ROLE_UTILISATEUR",
-                joinColumns = {
-                @JoinColumn(name = "ID_UTILISATEUR")
-                },
-                inverseJoinColumns = {
-                @JoinColumn(name = "ID_ROLE")
-                }
-        )
+    @JoinTable(name = "ROLE_UTILISATEUR",
+            joinColumns = {
+                    @JoinColumn(name = "ID_UTILISATEUR")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "ID_ROLE")
+            }
+    )
     private Set<Role> role;
 
 }
