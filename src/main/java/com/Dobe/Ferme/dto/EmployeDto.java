@@ -20,52 +20,44 @@ import java.time.LocalDate;
 public class EmployeDto {
 
 
-    private Integer Id;
-    private String Nom;
-    private String Prenom;
+    private Integer id;
+    private String nom;
+    private String prenom;
+    private LocalDate dateNaissance;
+    private String adresse;
+    private String telephone;
+    private String rang;
 
-    private LocalDate DateNaissance;
-    private String Adresse;
-    private String Telephone;
-    private String Rang;
+    private LocalDate dateEmbaucher;
 
-    private LocalDate DateEmbaucher;
-
-    private Integer tacheId;
+    private TacheDto tache;
     public static EmployeDto fromEntity(Employe employe) {
         return EmployeDto.builder()
-                .Id(employe.getId())
-                .Nom(employe.getNom())
-                .Prenom(employe.getPrenom())
-                .DateNaissance(employe.getDateNaissance())
-                .Adresse(employe.getAdresse())
-                .Telephone(employe.getTelephone())
-                .Rang(employe.getRang())
-                .DateEmbaucher(employe.getDateEmbaucher())
-                .tacheId(employe.getTache().getId())
+                .id(employe.getId())
+                .nom(employe.getNom())
+                .prenom(employe.getPrenom())
+                .dateNaissance(employe.getDateNaissance())
+                .adresse(employe.getAdresse())
+                .telephone(employe.getTelephone())
+                .rang(employe.getRang())
+                .dateEmbaucher(employe.getDateEmbaucher())
+                .tache(TacheDto.fromEntity(employe.getTache()))
                 .build();
     }
 
     public static Employe toEntity(EmployeDto employe) {
 
-       Employe employeModel = new Employe();
-       employeModel.setId(employe.getId());
-       employeModel.setNom(employe.getNom());
-       employeModel.setPrenom(employe.getPrenom());
-       employeModel.setDateNaissance(employe.getDateNaissance());
-       employeModel.setDateEmbaucher(employe.getDateEmbaucher());
-       employeModel.setAdresse(employe.getAdresse());
-       employeModel.setTelephone(employe.getTelephone());
-
-       employeModel.setRang(employe.getRang());
-
-        if (employe.getTacheId()!= null) {
-            Tache tache = new Tache();
-            tache.setId(employe.getTacheId());
-            employeModel.setTache(tache);
-        }
-
-        return employeModel;
+        return Employe.builder()
+                .id(employe.getId())
+                .nom(employe.getNom())
+                .prenom(employe.getPrenom())
+                .dateNaissance(employe.getDateNaissance())
+                .adresse(employe.getAdresse())
+                .telephone(employe.getTelephone())
+                .rang(employe.getRang())
+                .dateEmbaucher(employe.getDateEmbaucher())
+                .tache(TacheDto.toEntity(employe.getTache()))
+                .build();
     }
 
     }

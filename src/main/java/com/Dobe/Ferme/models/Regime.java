@@ -21,11 +21,11 @@ public class Regime extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Regime")
-    private Integer Id;
+    private Integer id;
     @Column(name = "Quantite_Journaliere")
-    private Integer Quantite;
+    private Integer quantite;
     @Column(name = "Duree_Regime")
-    private LocalDate DureeRegime;
+    private LocalDate dureeRegime;
     @ManyToOne
     @JoinColumn(name = "Id_Animal")
     private Animal animal;

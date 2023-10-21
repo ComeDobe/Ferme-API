@@ -20,11 +20,11 @@ public class Aliment extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Aliment")
-    private Integer Id;
-    private String Nom;
-    private String Type;
-    private String Composition;
-    private Integer Prix;
+    private Integer id;
+    private String nom;
+    private String type;
+    private String composition;
+    private Integer prix;
     @ManyToOne
     @JoinColumn(name = "Id_Regime")
     private Regime regime;

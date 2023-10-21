@@ -21,13 +21,13 @@ public class Recolte extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Recolte")
-    private Integer Id;
+    private Integer id;
     @Column(name = "Date_Recolte")
-    private LocalDate DateRecolte;
+    private LocalDate dateRecolte;
     @Column(name = "Quantite_Produite")
-    private Integer QuantiteProduite;
+    private Integer quantiteProduite;
     @Column(name = "Qualite_Produite")
-    private String QualiteProduite;
+    private String qualiteProduite;
     @ManyToOne
     @JoinColumn(name = "Id_plantation")
     private  Plantation plantation;

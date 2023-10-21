@@ -20,15 +20,15 @@ public class Plante extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Plante")
-    private Integer  Id;
+    private Integer  id;
     @Column(name = "Nom_Scientifique")
-    private String Nom;
+    private String nom;
     @Column(name = "Nom_Commun")
     private String pseudo;
     @Column(name = "Exigence_Climentique")
-    private String Climent;
+    private String climent;
     @Column(name = "Exigence_Sol")
-    private String Sol;
+    private String sol;
     @ManyToOne
     @JoinColumn(name = "Id_Plantation")
     private Plantation plantation;

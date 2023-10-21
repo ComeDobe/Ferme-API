@@ -16,15 +16,15 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class RoleDto {
 
-    private Integer Id;
+    private Integer id;
 
     @NotNull(message = "Le roleName ne peut pas etre null")
     @NotEmpty(message = "Le roleName ne peut pas etre vide")
     @NotBlank(message = "Le roleName ne peut pas contenir d'éspace")
-    private String RoleName;
+    private String roleName;
 
     @NotNull(message = "La description ne peut pas etre null")
     @NotEmpty(message = "La description ne peut pas etre vide")
     @NotBlank(message = "La description ne peut pas contenir d'éspace")
-    private String RoleDescription;
+    private String roleDescription;
 }

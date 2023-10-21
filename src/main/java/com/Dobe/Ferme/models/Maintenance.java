@@ -21,19 +21,19 @@ public class Maintenance extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Maintenance")
-    private Integer Id;
+    private Integer id;
     @Column(name = "Description_Maintenance")
-    private String Description;
+    private String description;
     @Column(name = "Date_Maintenance")
-    private LocalDate Date ;
+    private LocalDate date ;
     @Column(name = "Cout_maintenance")
-    private String Cout;
+    private String cout;
 
     @ManyToOne
     @JoinColumn(name = "Id_Materiel")
     private Materiel materiel;
     @ManyToOne
     @JoinColumn(name = "Id_Employe")
-    private Employe employee;
+    private Employe employe;
 
 }

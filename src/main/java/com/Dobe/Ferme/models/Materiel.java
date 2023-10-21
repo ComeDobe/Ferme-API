@@ -21,17 +21,17 @@ public class Materiel extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Materiel")
-    private Integer Id;
-    private String Nom;
-    private String Type;
-    private String Marque;
-    private String Modele;
+    private Integer id;
+    private String nom;
+    private String type;
+    private String marque;
+    private String modele;
     @Column(name = "Date_Achat")
-    private LocalDate DateAchat;
+    private LocalDate dateAchat;
     @Column(name ="Date_Reparation")
-    private LocalDate DateReparation;
+    private LocalDate dateReparation;
     @Column(name = "Etat_Materiel")
-    private String EtatMateriel;
+    private String etatMateriel;
     @ManyToOne
     @JoinColumn(name = "Id_Ferme")
     private Ferme ferme;

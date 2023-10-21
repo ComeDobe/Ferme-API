@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface UtilisateurRepository extends JpaRepository <Utilisateur, Integer> {
-    @Query("FROM Utilisateur U JOIN FETCH U.role WHERE U.Email =:email")
+    @Query("FROM Utilisateur U JOIN FETCH U.role WHERE U.email =:email")
     Optional <Utilisateur> findByEmail(@Param("email") String email);
 }

@@ -20,11 +20,11 @@ public class Role extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Role")
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "Nom_Role")
-    private String RoleName;
+    private String roleName;
     @Column(name = "Description_Role")
-    private String RoleDescription;
+    private String roleDescription;
 
 }

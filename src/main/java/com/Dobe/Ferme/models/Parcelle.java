@@ -20,11 +20,11 @@ public class Parcelle extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Parcelle")
-    private Integer Id;
-    private String Nom;
-    private String Dimension;
+    private Integer id;
+    private String nom;
+    private String dimension;
     @Column(name = "Type_Sol")
-    private String TypeSol;
+    private String typeSol;
     @ManyToOne
     @JoinColumn(name = "Id_Tache")
     private Tache tache;

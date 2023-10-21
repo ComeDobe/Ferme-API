@@ -20,16 +20,16 @@ public class Employe extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Employe")
-    private Integer Id;
-    private String Nom;
-    private String Prenom;
+    private Integer id;
+    private String nom;
+    private String prenom;
     @Column(name = "Date_Naissance")
-    private LocalDate DateNaissance;
-    private String Adresse;
-    private String Telephone;
-    private String Rang;
+    private LocalDate dateNaissance;
+    private String adresse;
+    private String telephone;
+    private String rang;
     @Column(name = "Date_Embaucher")
-    private LocalDate DateEmbaucher;
+    private LocalDate dateEmbaucher;
     @ManyToOne
     @JoinColumn(name = "Id_Tache")
     private Tache tache;

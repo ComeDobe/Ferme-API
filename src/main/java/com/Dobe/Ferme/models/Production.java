@@ -20,13 +20,13 @@ public class Production extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Production")
-    private Integer Id;
+    private Integer id;
 
-    private String Type;
-    private String Qualite;
-    private Integer Quantite;
+    private String type;
+    private String qualite;
+    private Integer quantite;
     @Column(name = "Date_Production")
-    private LocalDate DateProduction;
+    private LocalDate dateProduction;
     @ManyToOne
     @JoinColumn(name = "Id_Animal")
     private Animal animal;

@@ -23,16 +23,16 @@ public class Utilisateur extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Utilisateur")
-    private Integer Id;
+    private Integer id;
     @Column(name = "Nom")
-    private String FirstName;
+    private String firstName;
     @Column(name = "Prenom")
-    private String LastName;
-    private String Password;
+    private String lastName;
+    private String password;
     private boolean active;
-    private String Email;
-    private String Adresse;
-    private String Telephone;
+    private String email;
+    private String adresse;
+    private String telephone;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "ROLE_UTILISATEUR",

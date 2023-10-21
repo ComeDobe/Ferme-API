@@ -20,14 +20,14 @@ public class Espece extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Espece")
-    private Integer Id;
+    private Integer id;
     @Column(name = "Nom_Commun")
-    private String NomCommun;
+    private String nomCommun;
     @Column(name = "Nom_Scientifique")
-    private String NomScientifique;
+    private String nomScientifique;
     @Column(name = "Duree_Vie")
-    private LocalDate DureeVie;
-    private Integer Poids;
+    private LocalDate dureeVie;
+    private Integer poids;
     @ManyToOne
     @JoinColumn(name = "Id_Animal")
     private Animal animal;

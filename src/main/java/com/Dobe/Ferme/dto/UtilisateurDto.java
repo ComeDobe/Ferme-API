@@ -16,51 +16,53 @@ import javax.validation.constraints.Size;
 @Builder
 public class UtilisateurDto {
 
-    private Integer Id;
+    private Integer id;
 
     @NotBlank(message = "le nom ne doit pas être vide")
-    private String FirstName;
+    private String firstName;
 
     @NotBlank(message = "le prénom ne doit pas être vide")
-    private String LastName;
+    private String lastName;
 
     @NotBlank(message = "le mot de passe ne doit pas être vide")
     @Size(min = 8, max = 16, message = "le mot de passe doit être entre 8 et 16 caractères")
-    private String Password;
+    private String password;
 
     @NotBlank(message = "L'email ne doit pas être vide")
     @Email(message = "L'email n'est pas conforme")
-    private String Email;
+    private String email;
 
     @NotBlank(message = "l'adresse ne doit pas être vide")
-    private String Adresse;
+    private String adresse;
 
     @NotBlank(message = "le téléphone ne doit pas être vide")
-    private String Telephone;
+    private String telephone;
 
     private boolean active;
 
     public static UtilisateurDto fromEntity(Utilisateur utilisateur) {
         return UtilisateurDto.builder()
-                .Id(utilisateur.getId())
-                .FirstName(utilisateur.getFirstName())
-                .LastName(utilisateur.getLastName())
-                .Email(utilisateur.getEmail())
-                .Telephone(utilisateur.getTelephone())
-                .Adresse(utilisateur.getAdresse())
+                .id(utilisateur.getId())
+                .firstName(utilisateur.getFirstName())
+                .lastName(utilisateur.getLastName())
+                .email(utilisateur.getEmail())
+                .telephone(utilisateur.getTelephone())
+                .adresse(utilisateur.getAdresse())
+                .password(utilisateur.getPassword())
                 .active(utilisateur.isActive())
                 .build();
     }
 
     public static Utilisateur toEntity(UtilisateurDto utilisateur) {
         return Utilisateur.builder()
-                .Id(utilisateur.getId())
-                .FirstName(utilisateur.getFirstName())
-                .LastName(utilisateur.getLastName())
-                .Email(utilisateur.getEmail())
-                .Telephone(utilisateur.getTelephone())
-                .Adresse(utilisateur.getAdresse())
-                .Password(utilisateur.getPassword())
+                .id(utilisateur.getId())
+                .firstName(utilisateur.getFirstName())
+                .lastName(utilisateur.getLastName())
+                .email(utilisateur.getEmail())
+                .telephone(utilisateur.getTelephone())
+                .adresse(utilisateur.getAdresse())
+                .password(utilisateur.getPassword())
+                .active(utilisateur.isActive())
                 .build();
     }
 }

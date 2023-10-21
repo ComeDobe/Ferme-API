@@ -23,11 +23,11 @@ public class Tache extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Tache")
-    private Integer Id;
+    private Integer id;
 
-    private String Description;
+    private String description;
     @Column(name = "Date_Debut")
-    private LocalDate DateDebut;
+    private LocalDate dateDebut;
     @Column(name = "Date_Fin")
-    private LocalDate DateFin;
+    private LocalDate dateFin;
 }

@@ -18,37 +18,32 @@ import javax.persistence.ManyToOne;
 public class AlimentDto {
 
 
-    private Integer Id;
-    private String Nom;
-    private String Type;
-    private String Composition;
-    private Integer Prix;
-    private Integer regimeId;
+    private Integer id;
+    private String nom;
+    private String type;
+    private String composition;
+    private Integer prix;
+    private RegimeDto regime;
     public static AlimentDto fromEntity(Aliment aliment) {
         return AlimentDto.builder()
-                .Id(aliment.getId())
-                .Nom(aliment.getNom())
-                .Composition(aliment.getComposition())
-                .Prix(aliment.getPrix())
-                .Type(aliment.getType())
-                .regimeId(aliment.getRegime().getId())
+                .id(aliment.getId())
+                .nom(aliment.getNom())
+                .composition(aliment.getComposition())
+                .prix(aliment.getPrix())
+                .type(aliment.getType())
+                .regime(RegimeDto.fromEntity(aliment.getRegime()))
                 .build();
     }
     public static Aliment toEntity(AlimentDto aliment) {
-        Aliment alimentModel = new Aliment();
-        alimentModel.setId(aliment.getId());
-        alimentModel.setNom(aliment.getNom());
-        alimentModel.setType(aliment.getType());
-        alimentModel.setComposition(aliment.getComposition());
-        alimentModel.setPrix(aliment.getPrix());
+        return Aliment.builder()
+                .id(aliment.getId())
+                .nom(aliment.getNom())
+                .composition(aliment.getComposition())
+                .prix(aliment.getPrix())
+                .type(aliment.getType())
+                .regime(RegimeDto.toEntity(aliment.getRegime()))
+                .build();
 
-        if (aliment.getRegimeId() != null) {
-            Regime regime = new Regime();
-            regime.setId(aliment.getRegimeId());
-            alimentModel.setRegime(regime);
-        }
-
-        return alimentModel;
     }
 
 

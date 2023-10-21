@@ -20,11 +20,11 @@ public class Animal extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Animal")
-    private Integer Id;
-    private String Nom;
-    private String Sexe;
-    private String Sante;
-    private Integer Poids;
+    private Integer id;
+    private String nom;
+    private String sexe;
+    private String sante;
+    private Integer poids;
 
     @ManyToOne
     @JoinColumn(name = "Tache")

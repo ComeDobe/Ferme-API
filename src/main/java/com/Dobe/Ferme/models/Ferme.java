@@ -20,11 +20,11 @@ public class Ferme extends AbstractEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "Id_Ferme")
-    private Integer Id;
-    private String Nom;
-    private String Adresse;
-    private String Surface;
-    private String Sections;
+    private Integer id;
+    private String nom;
+    private String adresse;
+    private String surface;
+    private String sections;
     @ManyToOne
     @JoinColumn(name = "Id_Utilisateur")
     private Utilisateur utilisateur;
