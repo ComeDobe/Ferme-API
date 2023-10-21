@@ -20,7 +20,6 @@ public class UtilisateurDto {
 
     @NotBlank(message = "le nom ne doit pas être vide")
     private String firstName;
-
     @NotBlank(message = "le prénom ne doit pas être vide")
     private String lastName;
 
@@ -31,13 +30,11 @@ public class UtilisateurDto {
     @NotBlank(message = "L'email ne doit pas être vide")
     @Email(message = "L'email n'est pas conforme")
     private String email;
-
     @NotBlank(message = "l'adresse ne doit pas être vide")
     private String adresse;
 
     @NotBlank(message = "le téléphone ne doit pas être vide")
     private String telephone;
-
     private boolean active;
 
     public static UtilisateurDto fromEntity(Utilisateur utilisateur) {
