@@ -37,7 +37,7 @@ public class AnimalServiceImpl implements AnimalService {
     public AnimalDto findById(Integer id) {
         return animalRepository.findById(id)
                 .map(AnimalDto::fromEntity)
-                .orElseThrow(()-> new EntityNotFoundException(" cet n'a pas été trouvé par son id: " + id));
+                .orElseThrow(()-> new EntityNotFoundException(" cet utilisateur n'a pas été trouvé par son id: " + id));
     }
 
     @Override
