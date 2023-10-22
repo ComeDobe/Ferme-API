@@ -37,7 +37,7 @@ public class MaintenanceDto {
                 .build();
     }
 
-    public static Maintenance fromEntity(MaintenanceDto maintenance){
+    public static Maintenance toEntity(MaintenanceDto maintenance){
         return Maintenance.builder()
                 .id(maintenance.getId())
                 .description(maintenance.getDescription())
