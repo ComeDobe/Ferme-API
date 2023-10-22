@@ -36,7 +36,7 @@ public class ProductionDto {
                 .animal(AnimalDto.fromEntity(production.getAnimal()))
                 .build();
     }
-    public static Production fromEntity(ProductionDto production) {
+    public static Production toEntity(ProductionDto production) {
 
         return Production.builder()
                 .id(production.getId())
