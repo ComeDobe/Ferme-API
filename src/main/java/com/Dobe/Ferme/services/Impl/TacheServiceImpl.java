@@ -40,7 +40,7 @@ public class TacheServiceImpl implements TacheService {
     public TacheDto findById(Integer id) {
         return tacheRepository.findById(id)
                 .map(TacheDto::fromEntity)
-                .orElseThrow(()-> new EntityNotFoundException(" l'id du regime non trouvée"));
+                .orElseThrow(()-> new EntityNotFoundException(" l'id de la tache non trouvée"));
     }
 
     @Override
