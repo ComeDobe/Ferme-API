@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,6 +47,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     @Override
+    @Transactional
     public Integer validateAccount(Integer id) {
         Utilisateur utilisateur=utilisateurRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aucun utilisateur avec ce cmopte"));
@@ -55,11 +57,23 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     @Override
+    @Transactional
     public Integer invalidateAccount(Integer id) {
         Utilisateur utilisateur=utilisateurRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aucun utilisateur avec ce cmopte"));
         utilisateur.setActive(false);
         utilisateurRepository.save(utilisateur);
         return utilisateur.getId();
+    }
+
+    @Override
+    public Integer registerUtilisateur(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Integer updateUtilisateur(UtilisateurDto utilisateurDto) {
+        Utilisateur utilisateur=UtilisateurDto.toEntity(utilisateurDto);
+        return utilisateurRepository.save(utilisateur).getId();
     }
 }

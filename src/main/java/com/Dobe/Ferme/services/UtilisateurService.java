@@ -6,5 +6,7 @@ public interface UtilisateurService extends  AbstractService<UtilisateurDto>{
 
     Integer validateAccount(Integer id);
     Integer invalidateAccount(Integer id);
+    Integer registerUtilisateur(Integer id);
+    Integer updateUtilisateur(UtilisateurDto utilisateurDto);
 
 }
