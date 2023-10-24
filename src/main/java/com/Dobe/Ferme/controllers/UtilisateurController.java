@@ -28,22 +28,22 @@ public class UtilisateurController {
     }
 
     @GetMapping("/{utilisateur-id}")
-    public ResponseEntity<UtilisateurDto> findById(@PathVariable ("utilisateur-id") Integer utilisateurId){
+    public ResponseEntity<UtilisateurDto> findById(@PathVariable  Integer utilisateurId){
         return ResponseEntity.ok(utilisateurService.findById(utilisateurId));
     }
     @DeleteMapping("/{utilisateur-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("utilisateur-id") Integer utilisateurId ) {
+    public ResponseEntity<Void> delete(@PathVariable  Integer utilisateurId ) {
         utilisateurService.delete(utilisateurId);
         return ResponseEntity.accepted().build();
     }
 
-    @PatchMapping("/validate/{utilisateur-id}")
-    public ResponseEntity<Integer> validateAccount(@PathVariable ("utilisateur-id") Integer utilisateurId){
+    @PatchMapping("/validate/{utilisateurId}")
+    public ResponseEntity<Integer> validateAccount(@PathVariable  Integer utilisateurId){
         return ResponseEntity.ok(utilisateurService.validateAccount(utilisateurId));
     }
 
-    @PatchMapping("/invalidate/{utilisateur-id}")
-    public ResponseEntity<Integer> invalidateAccount(@PathVariable ("utilisateur-id") Integer utilisateurId){
+    @PatchMapping("/invalidate/{utilisateurId}")
+    public ResponseEntity<Integer> invalidateAccount(@PathVariable  Integer utilisateurId){
         return ResponseEntity.ok(utilisateurService.invalidateAccount(utilisateurId));
     }
 }

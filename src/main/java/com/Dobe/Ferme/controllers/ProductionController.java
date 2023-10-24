@@ -24,12 +24,12 @@ public class ProductionController {
     public ResponseEntity <List<ProductionDto>> findAll(){
         return ResponseEntity.ok(productionService.findAll());
     }
-    @GetMapping("/{production-id}")
-    public ResponseEntity<ProductionDto> findById(@PathVariable ("production-id") Integer productionId){
+    @GetMapping("/{productionId}")
+    public ResponseEntity<ProductionDto> findById(@PathVariable  Integer productionId){
         return ResponseEntity.ok(productionService.findById(productionId));
     }
-    @DeleteMapping("/{production-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("production-id") Integer productionId ) {
+    @DeleteMapping("/{productionId}")
+    public ResponseEntity<Void> delete(@PathVariable  Integer productionId ) {
         productionService.delete(productionId);
         return ResponseEntity.accepted().build();
     }

@@ -27,12 +27,12 @@ public class RecolteController {
     public ResponseEntity <List<RecolteDto>> findAll(){
         return ResponseEntity.ok(recolteService.findAll());
     }
-    @GetMapping("/{recolte-id}")
-    public ResponseEntity<RecolteDto> findById(@PathVariable ("recolte-id") Integer recolteId){
+    @GetMapping("/{recolteId}")
+    public ResponseEntity<RecolteDto> findById(@PathVariable  Integer recolteId){
         return ResponseEntity.ok(recolteService.findById(recolteId));
     }
-    @DeleteMapping("/{recolte-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("recolte-id") Integer recolteId ) {
+    @DeleteMapping("/{recolteId}")
+    public ResponseEntity<Void> delete(@PathVariable  Integer recolteId ) {
         recolteService.delete(recolteId);
         return ResponseEntity.accepted().build();
     }

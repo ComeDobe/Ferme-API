@@ -26,12 +26,12 @@ public class FermeController {
     public ResponseEntity <List<FermeDto>> findAll(){
         return ResponseEntity.ok(fermeService.findAll());
     }
-    @GetMapping("/{ferme-id}")
-    public ResponseEntity<FermeDto> findById(@PathVariable ("ferme-id") Integer fermeId){
+    @GetMapping("/{fermeId}")
+    public ResponseEntity<FermeDto> findById(@PathVariable Integer fermeId){
         return ResponseEntity.ok(fermeService.findById(fermeId));
     }
-    @DeleteMapping("/{ferme-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("ferme-id") Integer fermeId ) {
+    @DeleteMapping("/{fermeId}")
+    public ResponseEntity<Void> delete(@PathVariable  Integer fermeId ) {
         fermeService.delete(fermeId);
         return ResponseEntity.accepted().build();
     }

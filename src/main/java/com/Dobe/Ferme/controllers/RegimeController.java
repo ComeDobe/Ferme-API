@@ -27,12 +27,12 @@ public class RegimeController {
     public ResponseEntity <List<RegimeDto>> findAll(){
         return ResponseEntity.ok(regimeService.findAll());
     }
-    @GetMapping("/{regime-id}")
-    public ResponseEntity<RegimeDto> findById(@PathVariable ("regime-id") Integer regimeId){
+    @GetMapping("/{regimeId}")
+    public ResponseEntity<RegimeDto> findById(@PathVariable  Integer regimeId){
         return ResponseEntity.ok(regimeService.findById(regimeId));
     }
-    @DeleteMapping("/{regime-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("regime-id") Integer regimeId ) {
+    @DeleteMapping("/{regimeId}")
+    public ResponseEntity<Void> delete(@PathVariable Integer regimeId ) {
         regimeService.delete(regimeId);
         return ResponseEntity.accepted().build();
     }

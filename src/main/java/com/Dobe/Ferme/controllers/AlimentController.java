@@ -26,12 +26,12 @@ public class AlimentController {
     public ResponseEntity <List<AlimentDto>> findAll(){
         return ResponseEntity.ok(alimentService.findAll());
     }
-    @GetMapping("/{aliment-id}")
-    public ResponseEntity<AlimentDto> findById(@PathVariable ("aliment-id") Integer alimentId){
+    @GetMapping("/{alimentId}")
+    public ResponseEntity<AlimentDto> findById(@PathVariable Integer alimentId){
         return ResponseEntity.ok(alimentService.findById(alimentId));
     }
-    @DeleteMapping("/{aliment-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("aliment-id") Integer alimentId ) {
+    @DeleteMapping("/{alimentId}")
+    public ResponseEntity<Void> delete(@PathVariable Integer alimentId ) {
         alimentService.delete(alimentId);
         return ResponseEntity.accepted().build();
     }

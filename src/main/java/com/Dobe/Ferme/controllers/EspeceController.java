@@ -22,12 +22,12 @@ private  final EspeceService especeService;
     public ResponseEntity <List<EspeceDto>> findAll(){
         return ResponseEntity.ok(especeService.findAll());
     }
-    @GetMapping("/{espece-id}")
-    public ResponseEntity<EspeceDto> findById(@PathVariable("espece-id") Integer especeId){
+    @GetMapping("/{especeI}")
+    public ResponseEntity<EspeceDto> findById(@PathVariable Integer especeId){
         return ResponseEntity.ok(especeService.findById(especeId));
     }
-    @DeleteMapping("/{espece-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("espece-id") Integer especeId ) {
+    @DeleteMapping("/{especeI}")
+    public ResponseEntity<Void> delete(@PathVariable Integer especeId ) {
         especeService.delete(especeId);
         return ResponseEntity.accepted().build();
     }

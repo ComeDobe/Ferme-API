@@ -26,12 +26,12 @@ public class TacheController {
     public ResponseEntity <List<TacheDto>> findAll(){
         return ResponseEntity.ok(tacheService.findAll());
     }
-    @GetMapping("/{tache-id}")
-    public ResponseEntity<TacheDto> findById(@PathVariable ("tache-id") Integer tacheId){
+    @GetMapping("/{tacheId}")
+    public ResponseEntity<TacheDto> findById(@PathVariable Integer tacheId){
         return ResponseEntity.ok(tacheService.findById(tacheId));
     }
-    @DeleteMapping("/{tache-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("tache-id") Integer tacheId ) {
+    @DeleteMapping("/{tacheId}")
+    public ResponseEntity<Void> delete(@PathVariable  Integer tacheId ) {
         tacheService.delete(tacheId);
         return ResponseEntity.accepted().build();
     }

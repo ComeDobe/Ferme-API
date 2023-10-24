@@ -25,12 +25,12 @@ public class PlantationController {
     public ResponseEntity <List<PlantationDto>> findAll(){
         return ResponseEntity.ok(plantationService.findAll());
     }
-    @GetMapping("/{plantation-id}")
-    public ResponseEntity<PlantationDto> findById(@PathVariable ("plantation-id") Integer plantationId){
+    @GetMapping("/{plantationId}")
+    public ResponseEntity<PlantationDto> findById(@PathVariable Integer plantationId){
         return ResponseEntity.ok(plantationService.findById(plantationId));
     }
-    @DeleteMapping("/{plantation-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("plantation-id") Integer plantationId ) {
+    @DeleteMapping("/{plantationId}")
+    public ResponseEntity<Void> delete(@PathVariable  Integer plantationId ) {
         plantationService.delete(plantationId);
         return ResponseEntity.accepted().build();
     }

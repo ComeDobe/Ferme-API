@@ -47,7 +47,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     @Override
-    @Transactional
     public Integer validateAccount(Integer id) {
         Utilisateur utilisateur=utilisateurRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aucun utilisateur avec ce cmopte"));
@@ -57,7 +56,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     @Override
-    @Transactional
     public Integer invalidateAccount(Integer id) {
         Utilisateur utilisateur=utilisateurRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Aucun utilisateur avec ce cmopte"));

@@ -26,12 +26,12 @@ public class MaintenanceController {
     public ResponseEntity <List<MaintenanceDto>> findAll(){
         return ResponseEntity.ok(maintenanceService.findAll());
     }
-    @GetMapping("/{maitenance-id}")
-    public ResponseEntity<MaintenanceDto> findById(@PathVariable ("maintenance-id") Integer maintenanceId){
+    @GetMapping("/{maitenanceId}")
+    public ResponseEntity<MaintenanceDto> findById(@PathVariable Integer maintenanceId){
         return ResponseEntity.ok(maintenanceService.findById(maintenanceId));
     }
-    @DeleteMapping("/{maitenance-id}")
-    public ResponseEntity<Void> delete(@PathVariable ("maintenance-id") Integer maintenanceId ) {
+    @DeleteMapping("/{maitenanceId}")
+    public ResponseEntity<Void> delete(@PathVariable  Integer maintenanceId ) {
         maintenanceService.delete(maintenanceId);
         return ResponseEntity.accepted().build();
     }

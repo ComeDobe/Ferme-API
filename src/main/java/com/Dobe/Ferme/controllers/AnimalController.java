@@ -11,26 +11,28 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/animales")
 public class AnimalController {
     private final AnimalService animalService;
 
     @PostMapping("/")
     public ResponseEntity<Integer> save(@RequestBody AnimalDto animalDto){
-        return  ResponseEntity.ok(animalService.save(animalDto));
+        return ResponseEntity.ok(animalService.save(animalDto));
     }
+
     @GetMapping("/")
-    public ResponseEntity <List<AnimalDto>> findAll() {
+    public ResponseEntity<List<AnimalDto>> findAll() {
         return ResponseEntity.ok(animalService.findAll());
     }
-    @PatchMapping("/{animal-id }")
-    public ResponseEntity<AnimalDto> findById (@PathVariable ("animal-id") Integer animalId) {
+
+    @GetMapping("/{animalId}")
+    public ResponseEntity<AnimalDto> findById(@PathVariable Integer animalId) {
         return ResponseEntity.ok(animalService.findById(animalId));
     }
-    @PatchMapping("/{animal-id }")
-     public ResponseEntity <Void> delete (@PathVariable ("animal-id") Integer animalId){
+
+    @DeleteMapping("/{animalId}")
+    public ResponseEntity<Void> delete(@PathVariable Integer animalId) {
         animalService.delete(animalId);
         return ResponseEntity.accepted().build();
-}
+    }
 }
