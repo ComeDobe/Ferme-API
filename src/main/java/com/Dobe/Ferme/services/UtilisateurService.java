@@ -8,8 +8,8 @@ public interface UtilisateurService extends  AbstractService<UtilisateurDto>{
 
     Integer validateAccount(Integer id);
     Integer invalidateAccount(Integer id);
-    Integer registerUtilisateur(Integer id);
-    Integer updateUtilisateur(UtilisateurDto utilisateurDto);
+//    Integer registerUtilisateur(Integer id);
+//    Integer updateUtilisateur(UtilisateurDto utilisateurDto);
     AuthenticationResponse register(UtilisateurDto utilisateurDto);
     AuthenticationResponse authenticate(AuthenticationRequest request);
 //    Integer addRole(UtilisateurDto utilisateurDto);

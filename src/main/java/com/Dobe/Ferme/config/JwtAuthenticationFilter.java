@@ -40,7 +40,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         utilisateurEmail = jwtUtils.extractUsername(jwt);
         if (utilisateurEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = utilisateurRepository.findByEmail(utilisateurEmail)
-                    .orElseThrow(() -> new EntityNotFoundException("Utilisateur non trouvé lors de la validation du JWT"));
+                    .orElseThrow(() -> new EntityNotFoundException("Utilisateur non trouvé ou non validé par son jwt"));
             if (jwtUtils.isTokenValid(jwt, userDetails)) {
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
                         = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());

@@ -83,16 +83,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
         return utilisateur.getId();
     }
 
-    @Override
-    public Integer registerUtilisateur(Integer id) {
-        return null;
-    }
-
-    @Override
-    public Integer updateUtilisateur(UtilisateurDto utilisateurDto) {
-        Utilisateur utilisateur=UtilisateurDto.toEntity(utilisateurDto);
-        return utilisateurRepository.save(utilisateur).getId();
-    }
 
     @Override
     @Transactional
@@ -109,7 +99,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 
         var enregistrerUtilisateur = utilisateurRepository.save(utilisateur);
         Map<String, Object> claims = new HashMap<>();
-        claims.put("userId", enregistrerUtilisateur.getId());
+        claims.put("utilisateurId", enregistrerUtilisateur.getId());
         claims.put("fullName", enregistrerUtilisateur.getFirstName() + " " + enregistrerUtilisateur.getLastName());
         String token = jwtUtils.generateToken(enregistrerUtilisateur, claims);
         return AuthenticationResponse.builder()

@@ -22,9 +22,9 @@ public class Role extends AbstractEntity{
     @Column(name = "Id_Role")
     private Integer id;
 
-    @Column(name = "Nom_Role")
+
     private String roleName;
-    @Column(name = "Description_Role")
+
     private String roleDescription;
 
 }
