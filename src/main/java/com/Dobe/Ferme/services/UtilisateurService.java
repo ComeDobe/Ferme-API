@@ -11,7 +11,7 @@ public interface UtilisateurService extends  AbstractService<UtilisateurDto>{
     Integer registerUtilisateur(Integer id);
     Integer updateUtilisateur(UtilisateurDto utilisateurDto);
     AuthenticationResponse register(UtilisateurDto utilisateurDto);
-
     AuthenticationResponse authenticate(AuthenticationRequest request);
+//    Integer addRole(UtilisateurDto utilisateurDto);
 
 }

@@ -21,7 +21,7 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final  JwtUtils jwtUtils;
-    private UtilisateurRepository utilisateurRepository;
+    private final UtilisateurRepository utilisateurRepository;
     private static final String AUTHORAZITION = "Authorization";
     private static final String BEARER = "Bearer ";
     @Override

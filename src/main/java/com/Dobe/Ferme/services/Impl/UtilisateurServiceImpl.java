@@ -21,13 +21,16 @@ import javax.transaction.Transactional;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class UtilisateurServiceImpl implements UtilisateurService {
 
-    private static final String ROLE_USER = "ROLE_USER";
+    public static final String ROLE_ADMIN = "ROLE_ADMIN";
+    public static final String ROLE_USER = "ROLE_USER";
+
     private final UtilisateurRepository utilisateurRepository;
     private final ObjectsValidator<UtilisateurDto> validator;
     private final PasswordEncoder passwordEncoder;
@@ -97,17 +100,22 @@ public class UtilisateurServiceImpl implements UtilisateurService {
         validator.validate(utilisateurDto);
         Utilisateur utilisateur = UtilisateurDto.toEntity(utilisateurDto);
         utilisateur.setPassword(passwordEncoder.encode(utilisateur.getPassword()));
-//        utilisateur.addRole(findOrCreateRole(ROLE_USER)); // Utilisez addRole ici
-        var savedUser = utilisateurRepository.save(utilisateur);
+
+        if (utilisateurDto.isAdmin()) {
+            utilisateur.addRole(findOrCreateRole(ROLE_ADMIN));
+        } else {
+            utilisateur.addRole(findOrCreateRole(ROLE_USER));
+        }
+
+        var enregistrerUtilisateur = utilisateurRepository.save(utilisateur);
         Map<String, Object> claims = new HashMap<>();
-        claims.put("userId", savedUser.getId());
-        claims.put("fullName", savedUser.getFirstName() + " " + savedUser.getLastName());
-        String token = jwtUtils.generateToken(savedUser, claims);
+        claims.put("userId", enregistrerUtilisateur.getId());
+        claims.put("fullName", enregistrerUtilisateur.getFirstName() + " " + enregistrerUtilisateur.getLastName());
+        String token = jwtUtils.generateToken(enregistrerUtilisateur, claims);
         return AuthenticationResponse.builder()
                 .token(token)
                 .build();
     }
-
 
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -123,18 +131,18 @@ public class UtilisateurServiceImpl implements UtilisateurService {
                 .token(token)
                 .build();
     }
+
     private Role findOrCreateRole(String roleName) {
-        Role role = roleRepository.findByRoleName(roleName)
-                .orElse(null);
-        if (role == null) {
-            return roleRepository.save(
-                    Role.builder()
-                            .roleName(roleName)
-                            .build()
-            );
+        Optional<Role> existingRole = roleRepository.findByRoleName(roleName);
+        if (existingRole.isPresent()) {
+            return existingRole.get();
+        } else {
+            Role newRole = new Role();
+            newRole.setRoleName(roleName);
+            return roleRepository.save(newRole);
         }
-        return role;
     }
+
 
 
 }

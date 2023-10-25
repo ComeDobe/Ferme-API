@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -42,7 +43,7 @@ public class Utilisateur extends AbstractEntity implements UserDetails {
     private String email;
     private String adresse;
     private String telephone;
-
+    private boolean isAdmin;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "ROLE_UTILISATEUR",
             joinColumns = {
@@ -53,6 +54,9 @@ public class Utilisateur extends AbstractEntity implements UserDetails {
             }
     )
     private Set<Role> role;
+
+
+
 
 
 //-----------------------------------------------------------------------------------------------------------------
@@ -93,5 +97,12 @@ public class Utilisateur extends AbstractEntity implements UserDetails {
         return active;
     }
 
+
+    public void addRole(Role role) {
+        if (this.role == null) {
+            this.role = new HashSet<>();
+        }
+        this.role.add(role);
+    }
 
 }
