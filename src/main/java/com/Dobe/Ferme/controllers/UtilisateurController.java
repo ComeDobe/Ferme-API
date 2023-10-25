@@ -27,11 +27,11 @@ public class UtilisateurController {
         return ResponseEntity.ok(utilisateurService.findAll());
     }
 
-    @GetMapping("/{utilisateur-id}")
+    @GetMapping("/{utilisateurId}")
     public ResponseEntity<UtilisateurDto> findById(@PathVariable  Integer utilisateurId){
         return ResponseEntity.ok(utilisateurService.findById(utilisateurId));
     }
-    @DeleteMapping("/{utilisateur-id}")
+    @DeleteMapping("/{utilisateurId}")
     public ResponseEntity<Void> delete(@PathVariable  Integer utilisateurId ) {
         utilisateurService.delete(utilisateurId);
         return ResponseEntity.accepted().build();
