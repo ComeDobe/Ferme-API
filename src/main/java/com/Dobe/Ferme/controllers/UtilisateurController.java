@@ -5,8 +5,10 @@ import com.Dobe.Ferme.repositories.UtilisateurRepository;
 import com.Dobe.Ferme.services.UtilisateurService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
@@ -23,6 +25,7 @@ public class UtilisateurController {
     }
 
     @GetMapping("/")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<List<UtilisateurDto>> findAll() {
         return ResponseEntity.ok(utilisateurService.findAll());
     }
@@ -32,17 +35,20 @@ public class UtilisateurController {
         return ResponseEntity.ok(utilisateurService.findById(utilisateurId));
     }
     @DeleteMapping("/{utilisateurId}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> delete(@PathVariable  Integer utilisateurId ) {
         utilisateurService.delete(utilisateurId);
         return ResponseEntity.accepted().build();
     }
 
     @PatchMapping("/validate/{utilisateurId}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Integer> validateAccount(@PathVariable  Integer utilisateurId){
         return ResponseEntity.ok(utilisateurService.validateAccount(utilisateurId));
     }
 
     @PatchMapping("/invalidate/{utilisateurId}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Integer> invalidateAccount(@PathVariable  Integer utilisateurId){
         return ResponseEntity.ok(utilisateurService.invalidateAccount(utilisateurId));
     }
