@@ -105,34 +105,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
 
-//    @Transactional
-//    public List<AuthenticationResponse> register(List<UtilisateurDto> utilisateursDto) {
-//        List<AuthenticationResponse> responses = new ArrayList<>();
-//
-//        for (UtilisateurDto utilisateurDto : utilisateursDto) {
-//            validator.validate(utilisateurDto);
-//
-//            Utilisateur utilisateur = UtilisateurDto.toEntity(utilisateurDto);
-//            utilisateur.setPassword(passwordEncoder.encode(utilisateur.getPassword()));
-//
-//            if (utilisateurDto.isAdmin()) {
-//                utilisateur.addRole(findOrCreateRole(ROLE_ADMIN));
-//            } else {
-//                utilisateur.addRole(findOrCreateRole(ROLE_USER));
-//            }
-//            var enregistrerUtilisateur = utilisateurRepository.save(utilisateur);
-//            Map<String, Object> claims = new HashMap<>();
-//            claims.put("utilisateurId", enregistrerUtilisateur.getId());
-//            claims.put("fullName", enregistrerUtilisateur.getFirstName() + " " + enregistrerUtilisateur.getLastName());
-//            String token = jwtUtils.generateToken(enregistrerUtilisateur, claims);
-//
-//            responses.add(AuthenticationResponse.builder().token(token).build());
-//        }
-//
-//        return responses;
-//    }
-
-
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authManager.authenticate(
