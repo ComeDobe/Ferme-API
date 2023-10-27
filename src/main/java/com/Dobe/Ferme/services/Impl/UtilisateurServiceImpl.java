@@ -81,7 +81,6 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
 
-
     @Override
     @Transactional
     public AuthenticationResponse register(UtilisateurDto utilisateurDto) {
@@ -100,13 +99,25 @@ public class UtilisateurServiceImpl implements UtilisateurService {
         claims.put("utilisateurId", enregistrerUtilisateur.getId());
         claims.put("fullName", enregistrerUtilisateur.getFirstName() + " " + enregistrerUtilisateur.getLastName());
         String token = jwtUtils.generateToken(enregistrerUtilisateur, claims);
-        return AuthenticationResponse.builder().token(token)
+//        return AuthenticationResponse.builder().token(token).build();
+
+        List<String> utilisateurRole = utilisateur.getRole()
+                .stream()
+                .map(Role::getRoleName)
+                .collect(Collectors.toList());
+
+        return AuthenticationResponse.builder()
+                .token(token)
+                .firstName(utilisateur.getFirstName())
+                .lastName(utilisateur.getLastName())
+                .role(utilisateurRole)
                 .build();
     }
 
 
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
+
         authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
@@ -115,8 +126,18 @@ public class UtilisateurServiceImpl implements UtilisateurService {
         claims.put("utilisateurId", utilisateur.getId());
         claims.put("fullName", utilisateur.getFirstName() + " " + utilisateur.getLastName());
         final String token = jwtUtils.generateToken(utilisateur, claims);
+//        return AuthenticationResponse.builder().token(token).build();
+
+        List<String> utilisateurRole = utilisateur.getRole()
+                .stream()
+                .map(Role::getRoleName)
+                .collect(Collectors.toList());
+
         return AuthenticationResponse.builder()
                 .token(token)
+                .firstName(utilisateur.getFirstName())
+                .lastName(utilisateur.getLastName())
+                .role(utilisateurRole)
                 .build();
     }
 
