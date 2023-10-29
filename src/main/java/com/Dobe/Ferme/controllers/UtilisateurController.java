@@ -20,9 +20,11 @@ public class UtilisateurController {
     private final UtilisateurRepository utilisateurRepository;
 
     @PostMapping("/")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Integer> save(@RequestBody UtilisateurDto utilisateurDto){
-        return ResponseEntity.ok(utilisateurService.save(utilisateurDto));
+        return ResponseEntity.ok(utilisateurService.update(utilisateurDto));
     }
+
 
     @GetMapping("/")
     @PreAuthorize("hasRole('ROLE_ADMIN')")

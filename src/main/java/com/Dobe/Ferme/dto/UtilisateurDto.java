@@ -50,7 +50,7 @@ public class UtilisateurDto {
                         .roleName(role.getRoleName())
                         .roleDescription(role.getRoleDescription())
                         .build())
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); 
 
         return UtilisateurDto.builder()
                 .id(utilisateur.getId())
