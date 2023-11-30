@@ -18,13 +18,13 @@
 #WORKDIR /app
 #
 ## Copy the jar file built in the builder stage
-#COPY --from=builder /app/target/LocTest-0.0.1-SNAPSHOT.war LocTest.war
+#COPY --from=builder /app/target/Ferme-0.0.1-SNAPSHOT.war Ferme.war
 #
 ## Expose the port
 #EXPOSE 8080
 #
 ## Run the application
-#ENTRYPOINT ["java", "-jar", "LocTest.war"]
+#ENTRYPOINT ["java", "-jar", "Ferme.war"]
 #
 
 
