@@ -1,0 +1,43 @@
+version: '2.4'
+
+services:
+  backend:
+    build: .
+    image: Backendferme:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=Ferme
+      - DB_PORT=3306
+    depends_on:
+      - Ferme
+    networks:
+      - backend-network
+
+  Ferme:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: Ferme
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    networks:
+      - backend-network
+    volumes:
+      - db-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: Ferme
+      PMA_PORT: 3306
+    ports:
+      - "8081:80"
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+
+volumes:
+  db-data:

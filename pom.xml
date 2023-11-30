@@ -38,6 +38,13 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>org.postgresql</groupId>-->
+<!--			<artifactId>postgresql</artifactId>-->
+<!--			<version>42.6.0</version>-->
+<!--		</dependency>-->
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -72,6 +79,8 @@
 			<version>0.9.1</version>
 		</dependency>
 
+
+
 		<!--		documentation de l'application -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -85,8 +94,53 @@
 		</dependency>
 	</dependencies>
 
+
+	<profiles>
+
+<!--		profil dev-->
+
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<skipUnitTest>false</skipUnitTest>
+				<adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
+				<nom_bdd>Ferme</nom_bdd>
+				<utilisateur_bdd>root</utilisateur_bdd>
+				<mot_de_passe_bdd></mot_de_passe_bdd>
+				<ddl_auto>create</ddl_auto>
+				<nom_fichier_sql>mysql</nom_fichier_sql>
+				<initialisation_donnee_bdd>true</initialisation_donnee_bdd>
+				<mode_initialisation_donnee_bdd>always</mode_initialisation_donnee_bdd>
+				<dossier_upload>D:\\stockage</dossier_upload>
+				<jwt_secret></jwt_secret>
+			</properties>
+		</profile>
+
+<!--		profil prod-->
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<skipUnitTest>true</skipUnitTest>
+				<adresse_serveur_bdd>Ferme</adresse_serveur_bdd>
+				<nom_bdd>Ferme</nom_bdd>
+				<utilisateur_bdd>root</utilisateur_bdd>
+				<mot_de_passe_bdd></mot_de_passe_bdd>
+				<ddl_auto>validate</ddl_auto>
+				<nom_fichier_sql></nom_fichier_sql>
+				<initialisation_donnee_bdd>false</initialisation_donnee_bdd>
+				<mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>
+				<dossier_upload>/uploads</dossier_upload>
+				<jwt_secret></jwt_secret>
+			</properties>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
+			<!-- Plugin Spring Boot -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -99,7 +153,17 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- Plugin Maven Surefire -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M6</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>
+
