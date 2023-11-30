@@ -110,7 +110,7 @@
 			<properties>
 				<skipUnitTest>false</skipUnitTest>
 				<adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
-				<nom_bdd>Ferme</nom_bdd>
+				<nom_bdd>ferme</nom_bdd>
 				<utilisateur_bdd>root</utilisateur_bdd>
 				<mot_de_passe_bdd></mot_de_passe_bdd>
 				<ddl_auto>create</ddl_auto>
@@ -128,8 +128,8 @@
 			<id>prod</id>
 			<properties>
 				<skipUnitTest>true</skipUnitTest>
-				<adresse_serveur_bdd>Ferme</adresse_serveur_bdd>
-				<nom_bdd>Ferme</nom_bdd>
+				<adresse_serveur_bdd>ferme</adresse_serveur_bdd>
+				<nom_bdd>ferme</nom_bdd>
 				<utilisateur_bdd>root</utilisateur_bdd>
 				<mot_de_passe_bdd></mot_de_passe_bdd>
 				<ddl_auto>validate</ddl_auto>
