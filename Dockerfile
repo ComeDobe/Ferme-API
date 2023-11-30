@@ -31,6 +31,6 @@
 # Use Tomcat version 8.5 as the base
 FROM tomcat:8.5
 # Copy the WAR file to the Tomcat webapps directory
-COPY target/Ferme-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY target/Ferme-0.0.1-SNAPSHOT.jar /usr/local/tomcat/webapps/ROOT.jar
 # Use the Catalina script to run Tomcat
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
