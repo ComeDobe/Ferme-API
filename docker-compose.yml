@@ -3,18 +3,18 @@ version: '2.4'
 services:
   backend:
     build: .
-    image: Backendferme:latest
+    image: backendferme:latest
     ports:
       - "8080:8080"
     environment:
-      - DB_HOST=Ferme
+      - DB_HOST=ferme
       - DB_PORT=3306
     depends_on:
-      - Ferme
+      - ferme
     networks:
       - backend-network
 
-  Ferme:
+  ferme:
     image: mysql:5.7
     environment:
       MYSQL_DATABASE: Ferme
@@ -29,7 +29,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-      PMA_HOST: Ferme
+      PMA_HOST: ferme
       PMA_PORT: 3306
     ports:
       - "8081:80"
