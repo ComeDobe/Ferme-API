@@ -12,12 +12,3 @@ COPY ${JAR_FILE} app.jar
 
 # Run the jar file
 ENTRYPOINT ["java","-jar","/app.jar"]
-# Use Tomcat version 8.5 as the base
-FROM tomcat:8.5
-
-# Copy the WAR file to the Tomcat webapps directory
-COPY target/Ferme-0.0.1-SNAPSHOT.jar /usr/local/tomcat/webapps/ROOT.war
-
-# Use the Catalina script to run Tomcat
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
-
