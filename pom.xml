@@ -13,12 +13,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Ferme</name>
 	<description>Une Application de Gestion de Ferme Vegetale et Animale</description>
+
+	<packaging>war</packaging>
+
 	<properties>
-		<java.version>17</java.version>
+<!--		<java.version>17</java.version>-->
+		<java.version>11</java.version>
+		<skipUnitTest>false</skipUnitTest>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
