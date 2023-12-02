@@ -138,7 +138,7 @@
 				<adresse_serveur_bdd>ferme</adresse_serveur_bdd>
 				<nom_bdd>ferme</nom_bdd>
 				<utilisateur_bdd>root</utilisateur_bdd>
-				<mot_de_passe_bdd></mot_de_passe_bdd>
+				<mot_de_passe_bdd>408087</mot_de_passe_bdd>
 				<ddl_auto>validate</ddl_auto>
 				<nom_fichier_sql></nom_fichier_sql>
 				<initialisation_donnee_bdd>false</initialisation_donnee_bdd>
