@@ -1,15 +1,11 @@
-# Start with a base image containing Java runtime (OpenJDK 11)
-FROM openjdk:11-jre-slim
+# Utilisez l'image Tomcat 8.5 comme base
+FROM tomcat:8.5
 
-# Copy the WAR file to the Tomcat webapps directory
+# Copiez le fichier WAR de votre application Spring Boot dans le répertoire webapps de Tomcat
 COPY target/Ferme-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Expose the port
+# Exposez le port
 EXPOSE 8080
 
-# Use the Catalina script to run Tomcat
-CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
-
-# Add these lines to check the files in the container
-RUN ls -l /usr/local/tomcat/bin/
-RUN ls -l /usr/local/tomcat/webapps/
+# Utilisez le script Catalina pour exécuter Tomcat
+CMD ["catalina.sh", "run"]
