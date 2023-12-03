@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
 
     # Construire et démarrer l'application Docker
     cd /vagrant # Assurez-vous que votre Dockerfile est dans le répertoire partagé /vagrant
-    docker build -t Backenferme:latest .
-    docker run -d -p 8080:8080 --name Backenferme Backenferme:latest
+    docker build -t backenferme:latest .
+    docker run -d -p 8080:8080 --name backenferme Backenferme:latest
   SHELL
 end
