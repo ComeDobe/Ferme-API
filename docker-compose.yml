@@ -2,8 +2,9 @@ version: '2.4'
 
 services:
   backend:
+    image: backendferme
+    restart: always
     build: .
-    image: backendferme:latest
     ports:
       - "8080:8080"
     environment:
