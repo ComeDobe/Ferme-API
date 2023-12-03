@@ -9,3 +9,7 @@ EXPOSE 8080
 
 # Use the Catalina script to run Tomcat
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
+
+# Add these lines to check the files in the container
+RUN ls -l /usr/local/tomcat/bin/
+RUN ls -l /usr/local/tomcat/webapps/
