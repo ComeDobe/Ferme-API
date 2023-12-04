@@ -1,5 +1,5 @@
 # Utilisez l'image OpenJDK 8 comme base
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11-jdk
 # Définissez le répertoire de travail
 WORKDIR /app
 # Copiez le fichier JAR de votre application Spring Boot dans le répertoire de travail
