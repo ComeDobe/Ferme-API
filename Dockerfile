@@ -1,11 +1,10 @@
-# Utilisez l'image Tomcat 8.5 comme base
-FROM tomcat:8.5
-
-# Copiez le fichier WAR de votre application Spring Boot dans le répertoire webapps de Tomcat
-COPY target/Ferme-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
-
-# Exposez le port
+# Utilisez l'image OpenJDK 8 comme base
+FROM openjdk:8-jdk-alpine
+# Définissez le répertoire de travail
+WORKDIR /app
+# Copiez le fichier JAR de votre application Spring Boot dans le répertoire de travail
+COPY target/Ferme-0.0.1-SNAPSHOT.jar app.jar
+# Exposez le port utilisé par votre application Spring Boot
 EXPOSE 8080
-
-# Utilisez le script Catalina pour exécuter Tomcat
-CMD ["catalina.sh", "run"]
+# Commande pour exécuter l'application Spring Boot lorsque le conteneur démarre
+CMD ["java", "-jar", "app.jar"]
