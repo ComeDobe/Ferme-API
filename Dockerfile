@@ -1,4 +1,4 @@
-# Utilisez l'image OpenJDK 8 comme base
+# Utilisez l'image OpenJDK 11 comme base
 FROM openjdk:11-jdk
 # Définissez le répertoire de travail
 WORKDIR /app
