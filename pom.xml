@@ -14,7 +14,7 @@
 	<name>Ferme</name>
 	<description>Une Application de Gestion de Ferme Vegetale et Animale</description>
 
-<!--	<packaging>war</packaging>-->
+	<packaging>war</packaging>
 
 	<properties>
 <!--		<java.version>17</java.version>-->

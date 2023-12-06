@@ -1,47 +1,47 @@
-version: '2.4'
-
-services:
-  backend:
-    image: backendferme
-    restart: always
-    build: .
-    context: .
-    dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    environment:
-      - DB_HOST=ferme
-      - DB_PORT=3306
-    depends_on:
-      - ferme
-    networks:
-      - backend-network
-
-  ferme:
-    image: mysql:5.7
-    environment:
-      MYSQL_DATABASE: ferme
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
-    networks:
-      - backend-network
-    volumes:
-      - db-data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      PMA_HOST: ferme
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
-    ports:
-      - "8081:80"
-    networks:
-      - backend-network
-
-networks:
-  backend-network:
-
-volumes:
-  db-data:
+#version: '2.4'
+#
+#services:
+#  backend:
+#    image: backendferme
+#    restart: always
+#    build: .
+#    context: .
+#    dockerfile: Dockerfile
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - DB_HOST=ferme
+#      - DB_PORT=3306
+#    depends_on:
+#      - ferme
+#    networks:
+#      - backend-network
+#
+#  ferme:
+#    image: mysql:5.7
+#    environment:
+#      MYSQL_DATABASE: ferme
+#      MYSQL_ROOT_PASSWORD: root
+#    ports:
+#      - "3306:3306"
+#    networks:
+#      - backend-network
+#    volumes:
+#      - db-data:/var/lib/mysql
+#      - ./mysql-init:/docker-entrypoint-initdb.d
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    environment:
+#      PMA_HOST: ferme
+#      PMA_PORT: 3306
+#      PMA_ARBITRARY: 1
+#    ports:
+#      - "8081:80"
+#    networks:
+#      - backend-network
+#
+#networks:
+#  backend-network:
+#
+#volumes:
+#  db-data:
