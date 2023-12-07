@@ -1,7 +1,6 @@
 # Utilisez l'image OpenJDK 11 avec le client MySQL comme base
 FROM openjdk:11-jdk
 # Installez le client MySQL
-RUN apt-get update && apt-get install -y mysql-client
 # Définissez le répertoire de travail
 WORKDIR /app
 # Copiez le fichier JAR de votre application Spring Boot dans le répertoire de travail
