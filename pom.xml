@@ -14,7 +14,7 @@
 	<name>Ferme</name>
 	<description>Une Application de Gestion de Ferme Vegetale et Animale</description>
 
-	<packaging>war</packaging>
+<!--	<packaging>war</packaging>-->
 
 	<properties>
 <!--		<java.version>17</java.version>-->
@@ -105,49 +105,47 @@
 	</dependencies>
 
 
-	<profiles>
+<!--	<profiles>-->
+<!--&lt;!&ndash;		profil dev&ndash;&gt;-->
+<!--		<profile>-->
+<!--			<id>dev</id>-->
+<!--			<activation>-->
+<!--				<activeByDefault>true</activeByDefault>-->
+<!--			</activation>-->
+<!--			<properties>-->
+<!--				<skipUnitTest>false</skipUnitTest>-->
+<!--				<adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>-->
+<!--				<nom_bdd>ferme</nom_bdd>-->
+<!--				<utilisateur_bdd>root</utilisateur_bdd>-->
+<!--				<mot_de_passe_bdd></mot_de_passe_bdd>-->
+<!--				<ddl_auto>create</ddl_auto>-->
+<!--				<nom_fichier_sql>mysql</nom_fichier_sql>-->
+<!--				<initialisation_donnee_bdd>true</initialisation_donnee_bdd>-->
+<!--				<mode_initialisation_donnee_bdd>always</mode_initialisation_donnee_bdd>-->
+<!--				<dossier_upload>D:\\stockage</dossier_upload>-->
+<!--				<jwt_secret></jwt_secret>-->
+<!--			</properties>-->
+<!--		</profile>-->
 
-<!--		profil dev-->
+<!--&lt;!&ndash;		profil prod&ndash;&gt;-->
 
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<skipUnitTest>false</skipUnitTest>
-				<adresse_serveur_bdd>localhost:3306</adresse_serveur_bdd>
-				<nom_bdd>ferme</nom_bdd>
-				<utilisateur_bdd>root</utilisateur_bdd>
-				<mot_de_passe_bdd></mot_de_passe_bdd>
-				<ddl_auto>create</ddl_auto>
-				<nom_fichier_sql>mysql</nom_fichier_sql>
-				<initialisation_donnee_bdd>true</initialisation_donnee_bdd>
-				<mode_initialisation_donnee_bdd>always</mode_initialisation_donnee_bdd>
-				<dossier_upload>D:\\stockage</dossier_upload>
-				<jwt_secret></jwt_secret>
-			</properties>
-		</profile>
-
-<!--		profil prod-->
-
-		<profile>
-			<id>prod</id>
-			<properties>
-				<skipUnitTest>true</skipUnitTest>
-				<adresse_serveur_bdd>ferme:3306</adresse_serveur_bdd>
-				<nom_bdd>ferme</nom_bdd>
-				<utilisateur_bdd>root</utilisateur_bdd>
-				<mot_de_passe_bdd>root</mot_de_passe_bdd>
-				<ddl_auto>validate</ddl_auto>
-				<nom_fichier_sql></nom_fichier_sql>
-				<initialisation_donnee_bdd>false</initialisation_donnee_bdd>
-				<mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>
-				<dossier_upload>/uploads</dossier_upload>
-				<jwt_secret></jwt_secret>
-			</properties>
-		</profile>
-	</profiles>
+<!--		<profile>-->
+<!--			<id>prod</id>-->
+<!--			<properties>-->
+<!--				<skipUnitTest>true</skipUnitTest>-->
+<!--				<adresse_serveur_bdd>ferme:3306</adresse_serveur_bdd>-->
+<!--				<nom_bdd>ferme</nom_bdd>-->
+<!--				<utilisateur_bdd>root</utilisateur_bdd>-->
+<!--				<mot_de_passe_bdd>root</mot_de_passe_bdd>-->
+<!--				<ddl_auto>validate</ddl_auto>-->
+<!--				<nom_fichier_sql></nom_fichier_sql>-->
+<!--				<initialisation_donnee_bdd>false</initialisation_donnee_bdd>-->
+<!--				<mode_initialisation_donnee_bdd>never</mode_initialisation_donnee_bdd>-->
+<!--				<dossier_upload>/uploads</dossier_upload>-->
+<!--				<jwt_secret></jwt_secret>-->
+<!--			</properties>-->
+<!--		</profile>-->
+<!--	</profiles>-->
 	<build>
 		<plugins>
 			<!-- Plugin Spring Boot -->
