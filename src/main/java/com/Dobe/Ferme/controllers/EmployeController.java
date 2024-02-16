@@ -2,6 +2,7 @@ package com.Dobe.Ferme.controllers;
 
 import com.Dobe.Ferme.dto.EmployeDto;
 import com.Dobe.Ferme.services.EmployeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/employes")
+@Tag(name = "employes")
 public class EmployeController {
 
     private final EmployeService employeService;

@@ -2,6 +2,7 @@ package com.Dobe.Ferme.controllers;
 
 import com.Dobe.Ferme.dto.RoleDto;
 import com.Dobe.Ferme.services.RoleService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +14,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/roles")
+@Tag(name = "roles")
 public class RoleController {
 
     private final RoleService roleService;

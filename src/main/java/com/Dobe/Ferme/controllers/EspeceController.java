@@ -2,6 +2,7 @@ package com.Dobe.Ferme.controllers;
 
 import com.Dobe.Ferme.dto.EspeceDto;
 import com.Dobe.Ferme.services.EspeceService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/especes")
+@Tag(name = "especes")
 public class EspeceController {
 
 private  final EspeceService especeService;

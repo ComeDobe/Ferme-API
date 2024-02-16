@@ -3,6 +3,7 @@ package com.Dobe.Ferme.controllers;
 import com.Dobe.Ferme.dto.AlimentDto;
 import com.Dobe.Ferme.dto.AnimalDto;
 import com.Dobe.Ferme.services.AnimalService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/animales")
+@Tag(name = "animales")
 public class AnimalController {
     private final AnimalService animalService;
 

@@ -4,6 +4,7 @@ import com.Dobe.Ferme.dto.MaintenanceDto;
 import com.Dobe.Ferme.dto.MaterielDto;
 import com.Dobe.Ferme.services.MaintenanceService;
 import com.Dobe.Ferme.services.MaterielService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +13,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/materiels")
+@Tag(name = "materiels")
 public class MaterielController {
 
     private final MaterielService materielService;

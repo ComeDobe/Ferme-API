@@ -2,6 +2,7 @@ package com.Dobe.Ferme.controllers;
 
 import com.Dobe.Ferme.dto.ProductionDto;
 import com.Dobe.Ferme.services.ProductionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/productions")
+@Tag(name = "productions")
 public class ProductionController {
 
     private final ProductionService productionService;

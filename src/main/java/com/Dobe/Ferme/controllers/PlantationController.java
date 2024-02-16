@@ -3,6 +3,7 @@ package com.Dobe.Ferme.controllers;
 
 import com.Dobe.Ferme.dto.PlantationDto;
 import com.Dobe.Ferme.services.PlantationService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,8 +12,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/plantations")
+@Tag(name = "plantations")
 public class PlantationController {
 
     private final PlantationService plantationService;

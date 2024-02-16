@@ -4,6 +4,7 @@ import com.Dobe.Ferme.dto.AlimentDto;
 import com.Dobe.Ferme.dto.UtilisateurDto;
 import com.Dobe.Ferme.repositories.AlimentRepository;
 import com.Dobe.Ferme.services.AlimentService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,8 +13,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/aliments")
+@Tag(name = "aliments")
 public class AlimentController {
 
     public final AlimentService alimentService;

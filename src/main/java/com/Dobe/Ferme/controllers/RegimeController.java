@@ -5,6 +5,7 @@ import com.Dobe.Ferme.dto.RecolteDto;
 import com.Dobe.Ferme.dto.RegimeDto;
 import com.Dobe.Ferme.services.RecolteService;
 import com.Dobe.Ferme.services.RegimeService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +14,8 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-
 @RequestMapping("/regimes")
+@Tag(name = "regimes")
 public class RegimeController {
 
     private final RegimeService regimeService;
